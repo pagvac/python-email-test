@@ -1,0 +1,18 @@
+name: Send test email with python script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  python-email:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4   
+    - name: Attempt to send email
+      env:
+        GMAIL_SENDER: ${{ secret.GMAIL_SENDER }}
+        GMAIL_APP_PW: ${{ GMAIL_APP_PW }}
+        GMAIL_RECIPIENT: ${{ secret.GMAIL_RECIPIENT }}
+        GMAIL_RECIPIENT_2: ${{ secret.GMAIL_RECIPIENT_2 }}
+        run: python python-email.test.py
