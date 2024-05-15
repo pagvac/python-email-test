@@ -15,4 +15,4 @@ jobs:
         GMAIL_APP_PW: ${{ secrets.GMAIL_APP_PW }}
         GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
         GMAIL_RECIPIENT_2: ${{ secrets.GMAIL_RECIPIENT_2 }}
-      run: python python-email.test.py
+      run: python python-email-test.py
