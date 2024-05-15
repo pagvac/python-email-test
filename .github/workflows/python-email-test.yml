@@ -12,7 +12,7 @@ jobs:
     - name: Attempt to send email
       env:
         GMAIL_SENDER: ${{ secret.GMAIL_SENDER }}
-        GMAIL_APP_PW: ${{ GMAIL_APP_PW }}
+        GMAIL_APP_PW: ${{ secret.GMAIL_APP_PW }}
         GMAIL_RECIPIENT: ${{ secret.GMAIL_RECIPIENT }}
         GMAIL_RECIPIENT_2: ${{ secret.GMAIL_RECIPIENT_2 }}
-        run: python python-email.test.py
+      run: python python-email.test.py
